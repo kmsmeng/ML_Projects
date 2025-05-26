@@ -1,7 +1,7 @@
 # the output of the YOLO v1 model is [c1, c2, .....cn, [Cp, x1, y1, w, h] * times number of bbox]
 # so we take the difference of mean-squared value of the actual coordinates(x1, y1) from the predicted coordinates and do that for all the boudning bboxes. we do same for the height and wdith for all the bboxes. we also do this for the Cp(class probability) abd the classes(c1, c2, c3, ....cn) and add all of them to get the loss. this is the basic dumb down version of the loss funtion used in YOLO_v1
 
-from iou import intersection_over_union
+from utils import intersection_over_union
 
 import torch
 import torch.nn as nn

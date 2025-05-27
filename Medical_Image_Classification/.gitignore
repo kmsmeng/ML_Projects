@@ -1,3 +1,4 @@
 # Ignore all the datasets that are present inside the 'data' folder (e.g:the pneumonia dataset)
 data/
 YOLO_format_data/
+yolov8n.pt

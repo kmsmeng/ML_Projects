@@ -78,7 +78,7 @@ def main():
         load_checkpoint(torch.load(LOAD_MODEL_FILE), model, optimizer)
 
     train_dataset = VOCDataset(
-        'data/archive/train.csv',
+        'data/archive/8examples.csv',
         img_dir=IMG_DIR,
         label_dir=LABEL_DIR,
         transform=transform
@@ -96,7 +96,7 @@ def main():
                                   num_workers=NUM_WORKERS,
                                   pin_memory=PIN_MEMEORY,
                                   shuffle=True,
-                                  drop_last=True) # drops the last batch if the number of data samples in the last batch is smaller then the batch size
+                                  drop_last=False) # drops the last batch if the number of data samples in the last batch is smaller then the batch size
 
     test_dataloader = DataLoader(dataset=test_dataset,
                                  batch_size=BATCH_SIZE,

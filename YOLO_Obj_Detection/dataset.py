@@ -4,13 +4,14 @@ import os
 import pandas as pd
 from PIL import Image
 
-def VOCDataset(Dataset):
+
+class VOCDataset(Dataset):
     def __init__(self, csv_file, img_dir, label_dir, S=7, B=2, C=20, transform=None):
         super().__init__()
         self.annotations = pd.read_csv(csv_file)
         self.img_dir = img_dir
         self.label_dir = label_dir
-        self.transfrom = transform
+        self.transform = transform
         self.S = S
         self.B = B
         self.C = C
@@ -35,7 +36,7 @@ def VOCDataset(Dataset):
         image = Image.open(img_path)
         boxes = torch.tensor(boxes)
 
-        if self.tranform:
+        if self.transform:
             image, boxes = self.transform(image, boxes)
         
         label_matrix = torch.zeros((self.S, self.S, self.C + 5 * self.B))

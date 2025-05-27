@@ -113,12 +113,12 @@ class YoloLoss(nn.Module):
         return loss
 
 
-loss_class = YoloLoss()
+# loss_class = YoloLoss()
 
 
-predictions = torch.randn(size=(32, 7, 7, 30))
-target = torch.randn(size=(32, 7, 7, 25))
+# predictions = torch.randn(size=(32, 7, 7, 30))
+# target = torch.randn(size=(32, 7, 7, 25))
 
 
-loss = loss_class(predictions, predictions)
-print(loss)
+# loss = loss_class(predictions, predictions)
+# print(loss)

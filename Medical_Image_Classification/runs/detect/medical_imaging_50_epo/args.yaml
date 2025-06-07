@@ -1,6 +1,6 @@
 task: detect
 mode: train
-model: runs/detect/medical_imaging_v4/weights/best.pt
+model: runs\detect\medical_imaging_50_epo\weights\last.pt
 data: YOLO_format_data/data.yaml
 epochs: 50
 time: null
@@ -24,7 +24,7 @@ single_cls: false
 rect: false
 cos_lr: false
 close_mosaic: 10
-resume: false
+resume: runs\detect\medical_imaging_50_epo\weights\last.pt
 amp: true
 fraction: 1.0
 profile: false
@@ -75,7 +75,7 @@ momentum: 0.937
 weight_decay: 0.0005
 warmup_epochs: 3.0
 warmup_momentum: 0.8
-warmup_bias_lr: 0.1
+warmup_bias_lr: 0.0
 box: 7.5
 cls: 0.5
 dfl: 1.5

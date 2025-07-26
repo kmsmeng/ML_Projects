@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8n.pt
 data: YOLO_format_data/data.yaml
-epochs: 5
+epochs: 20
 time: null
 patience: 100
 batch: 16
@@ -102,4 +102,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: c:\Users\ASUS\Desktop\ML Projects\Projects(ML)\runs\detect\medical_imaging
+save_dir: c:\Users\w10195102\Desktop\PROJECTS\ML_Projects\runs\detect\medical_imaging
